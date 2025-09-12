@@ -45,5 +45,5 @@ group :development, :test do
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
 
-  gem 'annotaterb', '~> 4.18', '>= 4.18.0'
+  gem "annotaterb", "~> 4.18", ">= 4.18.0"
 end
