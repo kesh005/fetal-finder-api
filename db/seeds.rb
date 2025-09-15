@@ -1,9 +1,13 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+def create_tree(levels, children_count, current_level = 1, parent = nil)
+  return if current_level > levels
+
+  3.times do |i|
+    node = Node.create(name: "Node L#{current_level}N#{i + 1}", parent: parent)
+    create_tree(levels, children_count, current_level + 1, node)
+  end
+end
+
+3.times do |parent_i|
+  parent = Node.create(name: "ParentTree #{parent_i + 1}")
+  create_tree(4, 3, 1, parent)
+end
