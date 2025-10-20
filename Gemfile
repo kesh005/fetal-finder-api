@@ -47,3 +47,5 @@ group :development, :test do
 
   gem "annotaterb", "~> 4.18", ">= 4.18.0"
 end
+
+gem "rack-cors", "~> 3.0"
